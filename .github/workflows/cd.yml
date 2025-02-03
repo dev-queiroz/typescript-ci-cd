@@ -26,6 +26,6 @@ jobs:
       - name: Deploy to Railway
         uses: railwayapp/action@v1.3.0
         with:
-          service: cd4d653b-2268-45c6-969a-5715de28e9c9 # Nome do service no Railway
+          service: typescript-ci-cd # Nome do service no Railway
           environment: production
           token: e31caa6f-0a05-4085-8c3c-10237d76d7de

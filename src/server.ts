@@ -7,8 +7,9 @@ app.get("/", (req, res) => {
   res.send("Hello CI/CD World!");
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-export default app;
+// Exporte para uso nos testes
+export { app, server };

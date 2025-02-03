@@ -6,7 +6,8 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "test": "jest"
+    "test": "jest --watchAll=false --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",

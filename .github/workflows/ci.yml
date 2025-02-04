@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
-        run: npm ci # <<- Prefira ci em vez de install
+        run: npm install
 
       - name: Build project
         run: npm run build

@@ -1,23 +1,36 @@
 {
   "name": "typescript-ci-cd",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Projeto de exemplo utilizando TypeScript com CI/CD, Express e testes com Jest.",
+  "main": "dist/server.js",
   "scripts": {
+    "clean": "rimraf dist",
     "build": "tsc",
+    "prestart": "npm run build",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
     "test": "jest --watchAll=false --detectOpenHandles --forceExit",
     "test:watch": "jest --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-queiroz/typescript-ci-cd.git"
+  },
+  "keywords": [
+    "typescript",
+    "ci",
+    "cd",
+    "express",
+    "jest"
+  ],
+  "author": "DouglasVinícios dos Santos Queiroz <queirozdouglas466@gmail.com>",
+  "license": "",
+  "engines": {
+    "node": ">=20.15.0"
+  },
   "dependencies": {
     "express": "^4.21.2",
-    "supertest": "^6.0.1"
-  },
-  "devDependencies": {
+    "supertest": "^6.0.1",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.0",
@@ -25,8 +38,15 @@
     "@types/supertest": "^6.0.2",
     "jest": "^29.7.0",
     "nodemon": "^3.1.9",
+    "rimraf": "^5.0.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9"
   }
 }

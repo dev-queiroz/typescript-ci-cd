@@ -23,7 +23,25 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Login to Railway
+        run: npx @railway/cli login --browserless
+
+      - name: Open Railway Login Page
+        run: |
+          url=$(npx @railway/cli login --browserless)
+          open $url
+
+      - name: Click on the button with the xpath "//*[@id="__next"]/div/main/div/div/div/div[3]/button[2]/span"
+        run: |
+          url=$(npx @railway/cli login --browserless)
+          open $url
+          xdotool click 1
+
       - name: Deploy to Railway using Railway CLI
-        run: npx railway deploy --service "e1f3a01c-15d8-4679-8c4a-6abc76083676" --environment production
+        run: npx @railway/cli up --service "e1f3a01c-15d8-4679-8c4a-6abc76083676" --environment production
+
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

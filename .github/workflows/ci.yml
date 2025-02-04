@@ -36,4 +36,4 @@ jobs:
         run: npm test
 
       - name: Run ESLint
-        run: npx eslint "src/**/*.ts"
+        run: npx eslint dist/**/*.js

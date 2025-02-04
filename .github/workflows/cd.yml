@@ -15,17 +15,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.15.0
+          node-version: "20.15.0"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Railway
-        uses: railwayapp/action@v1.3.0
-        with:
-          service: cd4d653b-2268-45c6-969a-5715de28e9c9 # Nome do service no Railway
-          environment: production
-          token: e31caa6f-0a05-4085-8c3c-10237d76d7de
+      - name: Deploy to Railway using Railway CLI
+        run: npx railway deploy --service "e1f3a01c-15d8-4679-8c4a-6abc76083676" --environment production
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

@@ -17,11 +17,16 @@ jobs:
         with:
           node-version: "20.15.0"
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies for build
+        env:
+          NODE_ENV: development
+        run: npm ci
 
       - name: Build project
         run: npm run build
+
+      - name: Prune devDependencies
+        run: npm prune --production
 
       - name: Install Railway CLI
         run: npm install -g @railway/cli

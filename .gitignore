@@ -1,4 +1,9 @@
 # Jest
 /jest.config.js
 coverage/
+# Node modules
 /node_modules
+# Dist
+/dist
+# Env
+.env

@@ -1,13 +1,24 @@
 {
   "name": "express-typescript-ci-cd",
-  "version": "1.0.0",
-  "main": "dist/app.js",
+  "version": "2.0.0",
+  "main": "dist/src/app.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node dist/src/app.js",
     "build": "tsc",
     "dev": "ts-node-dev src/app.ts",
     "test": "jest"
   },
+  "keywords": [
+    "express",
+    "typescript",
+    "ci",
+    "cd",
+    "render",
+    "github actions"
+  ],
+  "author": "Douglas Vinícios dos Santos Queiroz",
+  "license": "",
+  "description": "Aplicação de exemplo para CI/CD com GitHub Actions e deploy na Render",
   "dependencies": {
     "express": "^4.18.2"
   },
